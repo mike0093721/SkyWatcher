@@ -220,6 +220,7 @@
             <p>Para más información sobre nuestros servicios, contáctanos a través de nuestras redes sociales o nuestro número de WhatsApp.</p>
             <div class="contact-info">
                 <p><strong>Instagram:</strong> <a href="https://instagram.com/skywatcher_sv" target="_blank">@skywatcher_sv</a></p>
+                <p><strong>facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61566534075801&mibextid=LQQJ4d" target="_blank">SkyWatcher</a></p>
                 <p><strong>WhatsApp:</strong> <a href="https://wa.me/50378500629" target="_blank">+503 7850 0629</a></p>
             </div>
         </section>
