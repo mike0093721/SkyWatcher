@@ -264,7 +264,7 @@
             <div id="mensaje-paquete">Paquete seleccionado: <span id="nombre-paquete"></span></div>
 
             <!-- Detalles de Paquetes -->
-            <div id="paquete-normal" style="display:none;">
+            <div id="paquete-Basico" style="display:none;">
                 <h4>Opción 1: Instalación de Cámaras</h4>
                 <ul>
                     <li>Instalación de 2 cámaras de videovigilancia HD.</li>
@@ -279,7 +279,7 @@
                 </ul>
             </div>
 
-            <div id="paquete-plus" style="display:none;">
+            <div id="paquete-Plus" style="display:none;">
                 <ul>
                     <li>Instalación de 4 cámaras de videovigilancia HD y 3 sensores (movimiento/infrarrojos).</li>
                     <li>Conexión y configuración completa del sistema.</li>
@@ -288,7 +288,7 @@
                 </ul>
             </div>
 
-            <div id="paquete-premium" style="display:none;">
+            <div id="paquete-Premium" style="display:none;">
                 <ul>
                     <li>Instalación de 6 cámaras de videovigilancia HD y 5 sensores (movimiento/infrarrojos).</li>
                     <li>Integración de cerraduras automáticas inteligentes.</li>
@@ -331,7 +331,7 @@
 
         // Función para mostrar el contenido de cada paquete
         function showPaquete(paquete) {
-            const paquetes = ['normal', 'plus', 'premium'];
+            const paquetes = ['Basico', 'Plus', 'Premium'];
             paquetes.forEach(p => {
                 document.getElementById('paquete-' + p).style.display = 'none';
             });
