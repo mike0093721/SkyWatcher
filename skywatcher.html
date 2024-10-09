@@ -114,8 +114,38 @@
         }
 
         /* Ocultar todas las secciones excepto la de "Quiénes Somos" al inicio */
-        #mision-vision, #valores, #servicios, #contacto, #instalaciones-equipos {
+        #mision-vision, #valores, #servicios, #contacto, #paquetes {
             display: none;
+        }
+
+        /* Estilos para la sección de Paquetes */
+        .paquete {
+            background-color: #1f1f1f;
+            border: 1px solid #00bcd4;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .paquete:hover {
+            background-color: #00bcd4;
+            color: #ffffff;
+        }
+
+        .paquete h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #00bcd4;
+        }
+
+        /* Mensaje de paquete seleccionado */
+        #mensaje-paquete {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #00bcd4;
+            display: none; /* Oculto por defecto */
         }
 
         /* Contacto */
@@ -172,7 +202,7 @@
         <a href="#mision-vision" onclick="showSection('mision-vision')">Misión y Visión</a>
         <a href="#valores" onclick="showSection('valores')">Valores</a>
         <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
-        <a href="#instalaciones-equipos" onclick="showSection('instalaciones-equipos')">Instalaciones y Equipos</a>
+        <a href="#paquetes" onclick="showSection('paquetes')">Paquetes</a>
         <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
     </nav>
 
@@ -215,20 +245,57 @@
             </ul>
         </section>
 
-        <!-- Instalaciones y Equipos -->
-        <section id="instalaciones-equipos">
-            <h2>Instalaciones y Equipos</h2>
-            <div>
+        <!-- Paquetes -->
+        <section id="paquetes">
+            <h2>Paquetes</h2>
+
+            <!-- Opciones de Paquetes -->
+            <div class="paquete" onclick="showPaquete('normal')">
                 <h3>Paquete Normal</h3>
-                <p>Descripción y detalles del Paquete Normal irán aquí.</p>
             </div>
-            <div>
+            <div class="paquete" onclick="showPaquete('plus')">
                 <h3>Paquete Plus</h3>
-                <p>Descripción y detalles del Paquete Plus irán aquí.</p>
             </div>
-            <div>
+            <div class="paquete" onclick="showPaquete('premium')">
                 <h3>Paquete Premium</h3>
-                <p>Descripción y detalles del Paquete Premium irán aquí.</p>
+            </div>
+
+            <!-- Mensaje de paquete seleccionado -->
+            <div id="mensaje-paquete">Paquete seleccionado: <span id="nombre-paquete"></span></div>
+
+            <!-- Detalles de Paquetes -->
+            <div id="paquete-normal" style="display:none;">
+                <h4>Opción 1: Instalación de Cámaras</h4>
+                <ul>
+                    <li>Instalación de 2 cámaras de videovigilancia HD.</li>
+                    <li>Configuración básica del sistema de grabación.</li>
+                    <li>Monitoreo remoto 24/7 con alertas instantáneas.</li>
+                </ul>
+                <h4>Opción 2: Instalación de Sensores</h4>
+                <ul>
+                    <li>Instalación de 3 sensores de movimiento o infrarrojos.</li>
+                    <li>Configuración básica del sistema de alarmas.</li>
+                    <li>Monitoreo remoto 24/7 con notificaciones en tiempo real.</li>
+                </ul>
+            </div>
+
+            <div id="paquete-plus" style="display:none;">
+                <ul>
+                    <li>Instalación de 4 cámaras de videovigilancia HD y 3 sensores (movimiento/infrarrojos).</li>
+                    <li>Conexión y configuración completa del sistema.</li>
+                    <li>Monitoreo remoto 24/7 con acceso a cámaras y sensores, alertas instantáneas en caso de movimiento.</li>
+                    <li>Instalación de un sistema básico de grabación local.</li>
+                </ul>
+            </div>
+
+            <div id="paquete-premium" style="display:none;">
+                <ul>
+                    <li>Instalación de 6 cámaras de videovigilancia HD y 5 sensores (movimiento/infrarrojos).</li>
+                    <li>Integración de cerraduras automáticas inteligentes.</li>
+                    <li>Conexión y configuración avanzada del sistema completo (cámaras, sensores, cerraduras).</li>
+                    <li>Monitoreo remoto 24/7 con acceso a grabaciones en tiempo real y almacenamiento en la nube.</li>
+                    <li>Sistema de grabación local con almacenamiento extendido (hasta 30 días de grabaciones).</li>
+                </ul>
             </div>
         </section>
 
@@ -238,8 +305,8 @@
             <p>Para más información sobre nuestros servicios, contáctanos a través de nuestras redes sociales o nuestro número de WhatsApp.</p>
             <div class="contact-info">
                 <p><strong>Instagram:</strong> <a href="https://instagram.com/skywatcher_sv" target="_blank">@skywatcher_sv</a></p>
-                <p><strong>WhatsApp:</strong> <a href="https://wa.me/50378500629" target="_blank">+503 7850 0629</a></p>
                 <p><strong>Facebook:</strong> <a href="https://facebook.com/skywatcher_sv" target="_blank">SkyWatcher</a></p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/50378500629" target="_blank">+503 7850 0629</a></p>
             </div>
         </section>
     </div>
@@ -249,17 +316,32 @@
     </footer>
 
     <script>
+        // Función para mostrar la sección correspondiente
         function showSection(sectionId) {
-            // Ocultar todas las secciones
-            document.querySelectorAll('section').forEach(section => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
                 section.style.display = 'none';
             });
-            // Mostrar la sección seleccionada
+
             document.getElementById(sectionId).style.display = 'block';
         }
 
         // Mostrar la sección "Quiénes Somos" por defecto
         showSection('quienes-somos');
+
+        // Función para mostrar el contenido de cada paquete
+        function showPaquete(paquete) {
+            const paquetes = ['normal', 'plus', 'premium'];
+            paquetes.forEach(p => {
+                document.getElementById('paquete-' + p).style.display = 'none';
+            });
+
+            document.getElementById('paquete-' + paquete).style.display = 'block';
+
+            // Mostrar mensaje de paquete seleccionado
+            document.getElementById('nombre-paquete').innerText = paquete.charAt(0).toUpperCase() + paquete.slice(1);
+            document.getElementById('mensaje-paquete').style.display = 'block';
+        }
     </script>
 </body>
 </html>
