@@ -215,8 +215,8 @@
             </ul>
         </section>
 
-        <!-- Instalaciones y Equipos -->
-        <section id="instalaciones-equipos">
+        <!-- Paquetes -->
+        <section id="Paquetes">
             <h2>Instalaciones y Equipos</h2>
             <div>
                 <h3>Paquete Normal</h3>
