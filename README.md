@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -114,7 +114,7 @@
         }
 
         /* Ocultar todas las secciones excepto la de "Quiénes Somos" al inicio */
-        #mision-vision, #valores, #servicios, #contacto {
+        #mision-vision, #valores, #servicios, #contacto, #instalaciones-equipos {
             display: none;
         }
 
@@ -172,6 +172,7 @@
         <a href="#mision-vision" onclick="showSection('mision-vision')">Misión y Visión</a>
         <a href="#valores" onclick="showSection('valores')">Valores</a>
         <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
+        <a href="#instalaciones-equipos" onclick="showSection('instalaciones-equipos')">Instalaciones y Equipos</a>
         <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
     </nav>
 
@@ -214,36 +215,51 @@
             </ul>
         </section>
 
+        <!-- Instalaciones y Equipos -->
+        <section id="instalaciones-equipos">
+            <h2>Instalaciones y Equipos</h2>
+            <div>
+                <h3>Paquete Normal</h3>
+                <p>Descripción y detalles del Paquete Normal irán aquí.</p>
+            </div>
+            <div>
+                <h3>Paquete Plus</h3>
+                <p>Descripción y detalles del Paquete Plus irán aquí.</p>
+            </div>
+            <div>
+                <h3>Paquete Premium</h3>
+                <p>Descripción y detalles del Paquete Premium irán aquí.</p>
+            </div>
+        </section>
+
         <!-- Contacto -->
         <section id="contacto">
             <h2>Contacto</h2>
             <p>Para más información sobre nuestros servicios, contáctanos a través de nuestras redes sociales o nuestro número de WhatsApp.</p>
             <div class="contact-info">
                 <p><strong>Instagram:</strong> <a href="https://instagram.com/skywatcher_sv" target="_blank">@skywatcher_sv</a></p>
-                <p><strong>facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61566534075801&mibextid=LQQJ4d" target="_blank">SkyWatcher</a></p>
                 <p><strong>WhatsApp:</strong> <a href="https://wa.me/50378500629" target="_blank">+503 7850 0629</a></p>
+                <p><strong>Facebook:</strong> <a href="https://facebook.com/skywatcher_sv" target="_blank">SkyWatcher</a></p>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>© 2024 SkyWatcher - Sistemas de Seguridad. Todos los derechos reservados.</p>
+        <p>&copy; 2024 SkyWatcher. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- JavaScript para mostrar/ocultar secciones -->
     <script>
         function showSection(sectionId) {
             // Ocultar todas las secciones
-            document.querySelectorAll('section').forEach(function(section) {
+            document.querySelectorAll('section').forEach(section => {
                 section.style.display = 'none';
             });
-
             // Mostrar la sección seleccionada
             document.getElementById(sectionId).style.display = 'block';
         }
 
-        // Mostrar "Quiénes Somos" al cargar la página
-        document.getElementById('quienes-somos').style.display = 'block';
+        // Mostrar la sección "Quiénes Somos" por defecto
+        showSection('quienes-somos');
     </script>
 </body>
 </html>
